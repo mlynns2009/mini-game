@@ -14,14 +14,13 @@ public partial class MainMenu : Control
 	private void OnStartPressed()
 	{
 		GD.Print("START CLICKED");
-		var err = GetTree().ChangeSceneToFile("res://Scenes/Level.tscn"); // Use exact path!
-		GD.Print($"Scene change result: {err}");
+		var err = GetTree().ChangeSceneToFile("res://Scenes/Level.tscn");
 	}
 
 	private void OnPausePressed()
 	{
 		GD.Print("PAUSE CLICKED");
-		// Later you can show a Pause menu or freeze the game
+		var err = GetTree().ChangeSceneToFile("res://Scenes/MainMenu.tscn");
 	}
 
 	private void OnQuitPressed()
