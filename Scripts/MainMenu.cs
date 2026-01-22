@@ -14,27 +14,15 @@ public partial class MainMenu : Control
 	private void OnStartPressed()
 	{
 		GD.Print("START CLICKED");
-<<<<<<< Updated upstream
 		var err = GetTree().ChangeSceneToFile("res://Scenes/Level.tscn");
-=======
-		var err = GetTree().ChangeSceneToFile("res://Scenes/Level.tscn"); 
-		GD.Print($"Scene change result: {err}");
->>>>>>> Stashed changes
 	}
 
 	private void OnPausePressed()
 	{
-<<<<<<< Updated upstream
 		GD.Print("PAUSE CLICKED");
 		var err = GetTree().ChangeSceneToFile("res://Scenes/MainMenu.tscn");
-=======
-		var tree = GetTree();
-		tree.Paused = !tree.Paused;
-		var err = GetTree().ChangeSceneToFile("res://Scenes/pause.tscn"); 
-		Visible = tree.Paused;
->>>>>>> Stashed changes
 	}
-	
+
 	private void OnQuitPressed()
 	{
 		GD.Print("QUIT CLICKED");
