@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=4 uid="uid://dyul5gx3sdekv"]
+[gd_scene load_steps=5 format=4 uid="uid://cj14sg3ulbunq"]
 
 [ext_resource type="PackedScene" uid="uid://bff8vrk62tyue" path="res://Scenes/TileMap.tscn" id="1_i1qvb"]
 [ext_resource type="PackedScene" uid="uid://bfoummb5wftve" path="res://Scenes/Player.tscn" id="2_7i348"]
 [ext_resource type="PackedScene" uid="uid://v074xqwg3vcg" path="res://Scenes/Ogre.tscn" id="3_4iqyc"]
+[ext_resource type="PackedScene" uid="uid://o88w4xke41n5" path="res://Scenes/MainMenu.tscn" id="4_fuudy"]
 
 [node name="Level" type="Node2D"]
 
@@ -15,11 +16,35 @@ position = Vector2(-166, -10)
 [node name="Camera2D" type="Camera2D" parent="Player"]
 zoom = Vector2(3, 3)
 
+[node name="MainMenu" parent="Player" instance=ExtResource("4_fuudy")]
+anchors_preset = 0
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = -166.0
+offset_top = -64.0
+offset_right = -166.0
+offset_bottom = -64.0
+grow_horizontal = 1
+grow_vertical = 1
+
 [node name="Ogre" parent="." instance=ExtResource("3_4iqyc")]
-position = Vector2(-46, -1)
+position = Vector2(-42, -31)
 
 [node name="Ogre2" parent="." instance=ExtResource("3_4iqyc")]
 position = Vector2(321, 228)
 
 [node name="Ogre3" parent="." instance=ExtResource("3_4iqyc")]
 position = Vector2(330, -159)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ProgressBar" type="ProgressBar" parent="CanvasLayer"]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -80.0
+offset_bottom = 27.0
+grow_horizontal = 0
+value = 100.0
