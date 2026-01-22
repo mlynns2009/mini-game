@@ -1,6 +1,10 @@
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 [gd_scene load_steps=5 format=4 uid="uid://dyul5gx3sdekv"]
+=======
+[gd_scene load_steps=6 format=4 uid="uid://cj14sg3ulbunq"]
+>>>>>>> Stashed changes
 =======
 [gd_scene load_steps=6 format=4 uid="uid://cj14sg3ulbunq"]
 >>>>>>> Stashed changes
@@ -13,8 +17,11 @@
 [ext_resource type="PackedScene" uid="uid://v074xqwg3vcg" path="res://Scenes/Ogre.tscn" id="3_4iqyc"]
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 [ext_resource type="PackedScene" uid="uid://o88w4xke41n5" path="res://Scenes/MainMenu.tscn" id="4_fuudy"]
 =======
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
 [ext_resource type="PackedScene" uid="uid://o88w4xke41n5" path="res://Scenes/MainMenu.tscn" id="3_xylue"]

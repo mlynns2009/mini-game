@@ -16,8 +16,11 @@ public partial class MainMenu : Control
 		GD.Print("START CLICKED");
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 		var err = GetTree().ChangeSceneToFile("res://Scenes/Level.tscn");
 =======
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
 		var err = GetTree().ChangeSceneToFile("res://Scenes/Level.tscn"); 
@@ -29,9 +32,12 @@ public partial class MainMenu : Control
 	{
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 		GD.Print("PAUSE CLICKED");
 		var err = GetTree().ChangeSceneToFile("res://Scenes/MainMenu.tscn");
 =======
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
 		var tree = GetTree();
@@ -39,6 +45,9 @@ public partial class MainMenu : Control
 		var err = GetTree().ChangeSceneToFile("res://Scenes/pause.tscn"); 
 		Visible = tree.Paused;
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
