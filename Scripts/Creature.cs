@@ -1,6 +1,6 @@
 using Godot;
 
-
+namespace UIProject.Scripts;
 
 public partial class Creature : CharacterBody2D
 {
@@ -12,13 +12,5 @@ public partial class Creature : CharacterBody2D
 	[Export]
 	public float Speed = 300.0f;
 	
-	public int CurrentHealth;
-	public void EmitHealthChanged()
-	{
-		EmitSignal(SignalName.HealthChanged, CurrentHealth, MaxHealth);
-	}
- 
+	protected int CurrentHealth;
 }
-
-  
-  
