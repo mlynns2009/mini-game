@@ -1,11 +1,9 @@
-[gd_scene load_steps=16 format=3 uid="uid://bfoummb5wftve"]
+[gd_scene load_steps=20 format=3 uid="uid://bfoummb5wftve"]
 
-[ext_resource type="Script" path="res://Scripts/Player.cs" id="1_41cht"]
+[ext_resource type="Script" uid="uid://d24stiu8n08g" path="res://Scripts/Player.cs" id="1_41cht"]
 [ext_resource type="Texture2D" uid="uid://dm3x6b71ac4xt" path="res://Assets/Characters/Player.png" id="2_xt7bx"]
-
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_0qv4k"]
-radius = 6.0
-height = 20.0
+[ext_resource type="Script" uid="uid://bg2vpqdbxaxaw" path="res://Scenes/CanvasLayer.cs" id="3_dewec"]
+[ext_resource type="Script" uid="uid://bo52w8aldirr" path="res://Scenes/HealthBar.cs" id="3_gntrk"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_png0o"]
 atlas = ExtResource("2_xt7bx")
@@ -98,6 +96,16 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kyqiw"]
+bg_color = Color(2.71939e-06, 0.543559, 0.239911, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gntrk"]
+bg_color = Color(0.860139, 0.230719, 0.185429, 1)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_0qv4k"]
+radius = 6.0
+height = 20.0
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rlnbg"]
 size = Vector2(18, 21)
 
@@ -106,15 +114,30 @@ collision_layer = 5
 motion_mode = 1
 script = ExtResource("1_41cht")
 
-[node name="Hitbox" type="CollisionShape2D" parent="."]
-position = Vector2(0, -10)
-shape = SubResource("CapsuleShape2D_0qv4k")
-
 [node name="Sprite" type="AnimatedSprite2D" parent="."]
-position = Vector2(0, -7)
+position = Vector2(0, -10)
 sprite_frames = SubResource("SpriteFrames_mj7fs")
 animation = &"attack"
 autoplay = "idle"
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+script = ExtResource("3_dewec")
+
+[node name="HealthBar" type="ProgressBar" parent="CanvasLayer"]
+offset_left = -374.0
+offset_top = -217.0
+offset_right = -331.0
+offset_bottom = -210.0
+theme_override_styles/background = SubResource("StyleBoxFlat_kyqiw")
+theme_override_styles/fill = SubResource("StyleBoxFlat_gntrk")
+max_value = 3.0
+value = 3.0
+show_percentage = false
+script = ExtResource("3_gntrk")
+
+[node name="Hitbox" type="CollisionShape2D" parent="."]
+position = Vector2(0, -10)
+shape = SubResource("CapsuleShape2D_0qv4k")
 
 [node name="HurtBox" type="Area2D" parent="."]
 position = Vector2(15, -10.5)
