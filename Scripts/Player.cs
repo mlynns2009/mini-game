@@ -17,6 +17,7 @@ public partial class Player : Creature
 
 	private AnimatedSprite2D _sprite;
 	private Area2D _hurtBox;
+	private HealthBar healthBar;
 
 	public override void _Ready()
 	{
@@ -25,6 +26,10 @@ public partial class Player : Creature
 		
 		_sprite = GetNode<AnimatedSprite2D>("Sprite");
 		_hurtBox = GetNode<Area2D>("HurtBox");
+		
+		healthBar = GetNode<HealthBar>("MainMenu/HealthBar");
+		//HealthChanged += healthBar.UpdateHealth;
+		healthBar.UpdateHealth(CurrentHealth, MaxHealth);
 	}
 
 	public override void _PhysicsProcess(double delta)
@@ -47,25 +52,30 @@ public partial class Player : Creature
 	public void TakeDamage(int damage)
 	{
 		CurrentHealth -= damage;
-
+		//EmitSignal(SignalName.HealthChanged, CurrentHealth, MaxHealth);
+		healthBar.UpdateHealth(CurrentHealth, MaxHealth);
+		
 		if (CurrentHealth <= 0)
 		{
 			Lives -= 1;
 			EmitSignal(SignalName.LivesChanged, Lives);
-			if (Lives <= 0) {
+			if (Lives <= 0) 
+			{
 				GD.Print("Game Over");
 				GetTree().Quit();
+				
 			}
 			else
 			{
 				GD.Print($"Player Lives: {Lives}");
 				GlobalPosition = _startPosition;
 				CurrentHealth = MaxHealth;
+				healthBar.UpdateHealth(CurrentHealth, MaxHealth);
 			}
 		}
 		
 		GD.Print($"Player Health: {CurrentHealth}");
-		EmitSignal(Creature.SignalName.HealthChanged, CurrentHealth, MaxHealth);
+		
 	}
 	
 	private void UpdateVelocity(Vector2 direction)
